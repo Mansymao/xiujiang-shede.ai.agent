@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江西修江水利集团有限公司 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national {
+            background: linear-gradient(135deg, #e74c3c22, #e74c3c11);
+            color: #c0392b;
+            border: 1px solid #e74c3c44;
+        }
+        .badge-province {
+            background: linear-gradient(135deg, #3498db22, #3498db11);
+            color: #2471a3;
+            border: 1px solid #3498db44;
+        }
+        .badge-city {
+            background: linear-gradient(135deg, #27ae6022, #27ae6011);
+            color: #1e8449;
+            border: 1px solid #27ae6044;
+        }
+        .badge-other {
+            background: linear-gradient(135deg, #8e44ad22, #8e44ad11);
+            color: #6c3483;
+            border: 1px solid #8e44ad44;
+        }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .biz-card .biz-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .biz-card h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .biz-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover {
+            background: #f0f5ff;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .level-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 15px;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #e8f4fd;
+            color: #2471a3;
+            margin: 1px 2px;
+            white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 18px 24px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .timeline-item h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .status-done {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #27ae6022;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .status-progress {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #f39c1222;
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            font-size: 13px;
+            transition: all 0.2s;
+            word-break: break-all;
+        }
+        .policy-ref a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .policy-card a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            transition: all 0.2s;
+        }
+        .policy-card a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .ext-icon {
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 2px;
+            opacity: 0.6;
+        }
+
+        /* ===== Roadmap ===== */
+        .roadmap {
+            margin-top: 24px;
+        }
+        .roadmap-quarter {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 6px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .roadmap-item {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .unit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .unit-card .unit-count {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .unit-card .unit-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Lifecycle Bar ===== */
+        .lifecycle-bar {
+            margin-top: 20px;
+            padding: 20px 24px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .lifecycle-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+        .lifecycle-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 4px;
+        }
+        .lifecycle-step .bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .lifecycle-step .step-pct {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== Contact Bar ===== */
+        .contact-bar {
+            margin-top: 20px;
+            padding: 16px 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+            padding-right: 12px;
+            border-right: 2px solid var(--border);
+        }
+        .contact-bar-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .contact-bar-info {
+            font-size: 13px;
+            color: var(--text);
+        }
+        .contact-bar-info .cb-label {
+            color: var(--text-light);
+            margin-right: 4px;
+        }
+        .contact-bar-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .contact-bar-info a:hover {
+            color: var(--accent);
+        }
+        .contact-bar-sep {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
+        }
+
+        /* ===== Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            border-left: 4px solid var(--accent);
+            transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6';
+            font-size: 12px;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: #f8f9fc;
+        }
+        .collapse-section .collapse-body {
+            padding: 24px 28px;
+            animation: fadeSlideIn 0.3s ease;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .collapse-section[open] summary { break-after: avoid; }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            .header-inner { padding: 16px; flex-direction: column; gap: 8px; }
+            .nav-inner { padding: 0 16px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .contact-bar-sep { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>江西修江水利集团有限公司 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年6月25日 &nbsp;|&nbsp; 共梳理10个可申报项目</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ===== 1. 可申报项目清单 ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">10</div>
+                <div class="stat-label">可申报项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~130-695+</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">3</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">7</div>
+                <div class="stat-label">省/市级项目</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ═══ 国家级项目 ═══ -->
+                    <!-- 项目1: 高新技术企业认定 -->
+                    <tr data-level="national">
+                        <td>1</td>
+                        <td><strong>高新技术企业认定（重新认定）</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>科技部 / 省科技厅 / 市科技局</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>4-8月（分三批）</td>
+                        <td class="amount">税收优惠 + 南昌市奖励5-8</td>
+                        <td>
+                            <span class="tech-tag sw">水利工程设计</span>
+                            <span class="tech-tag ai">BIM技术应用</span>
+                            <span class="tech-tag hw">智慧水利监测</span>
+                        </td>
+                        <td>1. 成立一年以上；2. 核心自主知识产权≥1项；3. 科技人员占比≥10%；4. 研发费用占比≥3%-5%；5. 高新技术产品（服务）收入占比≥60%</td>
+                        <td>高新技术企业认定申请书、企业营业执照、知识产权证书、研发项目立项文件、研发费用专项审计报告、科技成果转化说明</td>
+                        <td class="policy-ref"><a href="https://www.nc.gov.cn/ncszf/tzgg/202604/3e6b303af69f4c889b7972c40f73e95d.shtml" target="_blank" rel="noopener">关于组织开展南昌市2026年高新技术企业认定申报的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 项目2: 科技型中小企业评价 -->
+                    <tr data-level="national">
+                        <td>2</td>
+                        <td><strong>科技型中小企业评价入库</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>科技部 / 省科技厅</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>全年</td>
+                        <td class="amount">研发费用加计扣除100%</td>
+                        <td>
+                            <span class="tech-tag sw">水利勘察设计</span>
+                            <span class="tech-tag ai">数字孪生水利</span>
+                            <span class="tech-tag sw">工程咨询</span>
+                        </td>
+                        <td>1. 职工总数≤500人、年销售收入≤2亿元或资产总额≤2亿元；2. 科技人员占比≥10%；3. 研发费用占比≥3%；4. 拥有自主知识产权</td>
+                        <td>科技型中小企业评价信息表、企业营业执照、上年度财务报表、研发项目清单及佐证材料、知识产权证书</td>
+                        <td class="policy-ref">科技部《科技型中小企业评价办法》（国科发政〔2017〕111号）</td>
+                    </tr>
+                    <!-- 项目3: 专精特新"小巨人" -->
+                    <tr data-level="national">
+                        <td>3</td>
+                        <td><strong>国家级专精特新"小巨人"企业认定</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>工信部</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>5-6月</td>
+                        <td class="amount">最高600（中央3年）</td>
+                        <td>
+                            <span class="tech-tag ai">AI辅助水利设计</span>
+                            <span class="tech-tag sw">数字孪生水利</span>
+                            <span class="tech-tag hw">智能监测设备</span>
+                        </td>
+                        <td>1. 须为省级专精特新中小企业（前置条件）；2. 上年度营收≥5000万元；3. 研发费用占比≥3%；4. 有效发明专利≥2项；5. 主导产品市场占有率省内前3或全国前10</td>
+                        <td>专精特新"小巨人"申请表、省级专精特新证书、发明专利证书、市场占有率证明、审计报告</td>
+                        <td class="policy-ref"><a href="https://www.miit.gov.cn/jgsj/qyj/wjfb/art/2026/art_83857a4773ac4583bd1540eeb78bcbcb.html" target="_blank" rel="noopener">工业和信息化部办公厅关于开展2026年度专精特新"小巨人"企业认定和复核工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- ═══ 省级项目 ═══ -->
+                    <!-- 项目4: 专精特新中小企业 -->
+                    <tr data-level="province">
+                        <td>4</td>
+                        <td><strong>省级专精特新中小企业认定</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>上半年</td>
+                        <td class="amount">10-30</td>
+                        <td>
+                            <span class="tech-tag sw">水利数字化设计</span>
+                            <span class="tech-tag ai">智慧水利</span>
+                            <span class="tech-tag hw">工程监测设备</span>
+                        </td>
+                        <td>1. 须先获评创新型中小企业；2. 上年度营收≥1000万元；3. 研发费用占比≥3%；4. 拥有有效发明专利≥2项或实用新型≥5项；5. 主营业务收入占比≥70%</td>
+                        <td>专精特新中小企业申请表、企业营业执照、财务报表、知识产权证书、研发项目证明、市场占有率证明</td>
+                        <td class="policy-ref"><a href="https://gxt.jiangxi.gov.cn/jxsgyhxxht/gztz/content/content_2035980285182992384.html" target="_blank" rel="noopener">江西省工业和信息化厅关于开展2026年创新型中小企业评价工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 项目5: 创新型中小企业评价 -->
+                    <tr data-level="province">
+                        <td>5</td>
+                        <td><strong>江西省创新型中小企业评价入库</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>上半年</td>
+                        <td class="amount">南昌市配套5-10</td>
+                        <td>
+                            <span class="tech-tag sw">水利工程设计</span>
+                            <span class="tech-tag ai">信息化技术</span>
+                            <span class="tech-tag sw">工程咨询</span>
+                        </td>
+                        <td>1. 中小企业；2. 无信用问题；3. 评价评分达60分或符合直通条件；4. 在工信部平台注册</td>
+                        <td>创新型中小企业评价申请表、企业营业执照、研发投入证明、知识产权材料</td>
+                        <td class="policy-ref"><a href="https://gxt.jiangxi.gov.cn/jxsgyhxxht/gztz/content/content_2035980285182992384.html" target="_blank" rel="noopener">江西省工业和信息化厅关于开展江西省2026年第一批创新型中小企业评价工作的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 项目6: 加快培育高新技术企业若干措施 -->
+                    <tr data-level="province">
+                        <td>6</td>
+                        <td><strong>江西省加快培育高新技术企业若干措施</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>省科技厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>随高企认定批次</td>
+                        <td class="amount">新认定8 / 重新认定5</td>
+                        <td>
+                            <span class="tech-tag sw">水利勘察设计</span>
+                            <span class="tech-tag ai">BIM技术</span>
+                            <span class="tech-tag hw">智慧水利</span>
+                        </td>
+                        <td>1. 已通过高新技术企业认定或重新认定；2. 在江西省注册，具有独立法人资格</td>
+                        <td>高新技术企业认定申请书（导出文件）、认定证书、营业执照</td>
+                        <td class="policy-ref"><a href="https://kjj.nc.gov.cn/nckjj/tztg/202602/6a9e22474af0402f97c83d2b09c35427.shtml" target="_blank" rel="noopener">江西省人民政府办公厅关于印发《江西省加快培育高新技术企业的若干措施》的通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 项目7: 省级企业研发投入补助 -->
+                    <tr data-level="province">
+                        <td>7</td>
+                        <td><strong>江西省企业研发投入后补助</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>省科技厅 / 省财政厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>Q2-Q3</td>
+                        <td class="amount">按研发增量比例补助，最高200</td>
+                        <td>
+                            <span class="tech-tag sw">水利技术研发</span>
+                            <span class="tech-tag ai">数字孪生技术</span>
+                            <span class="tech-tag sw">工程软件</span>
+                        </td>
+                        <td>1. 有研发活动并在税务系统进行研发费用加计扣除备案；2. 研发投入同比增长；3. 企业财务状况良好</td>
+                        <td>研发投入后补助申请表、研发费用加计扣除备案表、年度审计报告、研发项目清单</td>
+                        <td class="policy-ref">江西省人民政府办公厅《江西省"十五五"促进全社会研发投入提升行动方案》</td>
+                    </tr>
+                    <!-- 项目8: 水利科技项目 -->
+                    <tr data-level="province">
+                        <td>8</td>
+                        <td><strong>江西省水利科技项目申报</strong></td>
+                        <td><span class="category-tag">水利科技</span></td>
+                        <td>省水利厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>Q3-Q4</td>
+                        <td class="amount">30-100</td>
+                        <td>
+                            <span class="tech-tag ai">数字孪生水利</span>
+                            <span class="tech-tag sw">智慧水利平台</span>
+                            <span class="tech-tag hw">水文监测设备</span>
+                        </td>
+                        <td>1. 具有水利行业相关资质或技术实力；2. 项目方向符合年度指南（含基础研究、水旱防御、水资源利用等）；3. 具备项目实施条件</td>
+                        <td>项目申报书、项目实施方案、技术路线说明、预算报告、团队资质</td>
+                        <td class="policy-ref"><a href="https://slt.jiangxi.gov.cn/jxsslt/tzgg880/pc/content/content_1967432019809746944.html" target="_blank" rel="noopener">关于补充征集2026年水利科技项目指南建议的函<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- ═══ 市级项目 ═══ -->
+                    <!-- 项目9: 南昌市科技计划项目 -->
+                    <tr data-level="city">
+                        <td>9</td>
+                        <td><strong>南昌市科技计划项目（重点研发/技术创新）</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>市科技创新局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>Q1-Q2</td>
+                        <td class="amount">10-50</td>
+                        <td>
+                            <span class="tech-tag ai">智慧水利AI</span>
+                            <span class="tech-tag sw">数字孪生平台</span>
+                            <span class="tech-tag hw">智能水利装备</span>
+                        </td>
+                        <td>1. 在南昌市注册的独立法人企业；2. 项目具有技术创新性；3. 具备项目实施基础和团队</td>
+                        <td>科技计划项目申报书、可行性报告、经费预算、团队介绍、前期研究基础</td>
+                        <td class="policy-ref"><a href="https://kjj.nc.gov.cn/nckjj/tztg/nav_list_2.shtml" target="_blank" rel="noopener">南昌市科技局通知通告<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <!-- 项目10: 南昌市数字化转型补助 -->
+                    <tr data-level="city">
+                        <td>10</td>
+                        <td><strong>南昌市企业数字化转型补助</strong></td>
+                        <td><span class="category-tag">数字化转型</span></td>
+                        <td>市工信局 / 市数转办</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>Q2-Q3</td>
+                        <td class="amount">10-50</td>
+                        <td>
+                            <span class="tech-tag sw">企业上云</span>
+                            <span class="tech-tag ai">AI辅助设计</span>
+                            <span class="tech-tag sw">协同办公平台</span>
+                        </td>
+                        <td>1. 在南昌市注册的中小企业；2. 实施数字化转型项目（上云、数字化改造等）；3. 设备投资占比达标</td>
+                        <td>数字化转型补助申请表、项目实施方案、投资证明、转型效果报告</td>
+                        <td class="policy-ref">南昌市人民政府办公室《关于加快先进制造业项目建设推进数字化转型升级的若干措施》</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q1<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">1-3月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9312;</strong> 创新型中小企业评价入库<br><span style="opacity:0.7">上半年 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9313;</strong> 省级专精特新中小企业认定<br><span style="opacity:0.7">上半年 | 省工信厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9314;</strong> 南昌市科技计划项目<br><span style="opacity:0.7">Q1-Q2 | 市科技创新局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">4-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9315;</strong> 高新技术企业认定（第一批）<br><span style="opacity:0.7">4月27日-5月27日 | 科技部</span></div>
+                        <div class="roadmap-item national"><strong>&#9316;</strong> 专精特新"小巨人"企业认定<br><span style="opacity:0.7">5-6月 | 工信部</span></div>
+                        <div class="roadmap-item province"><strong>&#9317;</strong> 企业研发投入后补助<br><span style="opacity:0.7">Q2-Q3 | 省科技厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9318;</strong> 南昌市数字化转型补助<br><span style="opacity:0.7">Q2-Q3 | 市工信局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">7-9月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9319;</strong> 高新技术企业认定（第二/三批）<br><span style="opacity:0.7">7-8月 | 科技部</span></div>
+                        <div class="roadmap-item province"><strong>&#9320;</strong> 水利科技项目申报<br><span style="opacity:0.7">Q3-Q4 | 省水利厅</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9321;</strong> 科技型中小企业评价入库<br><span style="opacity:0.7">全年 | 科技部</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">科技部 / 工信部</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">高新技术企业 / 科技型中小企业 / "小巨人"</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">省工信厅</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">专精特新 / 创新型中小企业</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">省科技厅 / 省水利厅</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">高企培育 / 研发补助 / 水利科技</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">南昌市科技局 / 工信局</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">科技计划 / 数字化转型</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 科技部《科技型中小企业评价办法》（国科发政〔2017〕111号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.miit.gov.cn/jgsj/qyj/wjfb/art/2026/art_83857a4773ac4583bd1540eeb78bcbcb.html" target="_blank" rel="noopener">工业和信息化部办公厅关于开展2026年度专精特新"小巨人"企业认定和复核工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> 财政部、工信部《关于进一步支持专精特新中小企业高质量发展的通知》（财建〔2024〕126号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> <a href="https://www.nc.gov.cn/ncszf/tzgg/202604/3e6b303af69f4c889b7972c40f73e95d.shtml" target="_blank" rel="noopener">关于组织开展南昌市2026年高新技术企业认定申报的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>江西省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://gxt.jiangxi.gov.cn/jxsgyhxxht/gztz/content/content_2035980285182992384.html" target="_blank" rel="noopener">江西省工业和信息化厅关于开展江西省2026年第一批创新型中小企业评价工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://gxt.jiangxi.gov.cn/jxsgyhxxht/gztz/content/content_2047613058866540544.html" target="_blank" rel="noopener">江西省工业和信息化厅关于做好2026年专精特新"小巨人"企业申报和复核工作的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://kjj.nc.gov.cn/nckjj/tztg/202602/6a9e22474af0402f97c83d2b09c35427.shtml" target="_blank" rel="noopener">江西省人民政府办公厅关于印发《江西省加快培育高新技术企业的若干措施》的通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 江西省人民政府办公厅《江西省"十五五"促进全社会研发投入提升行动方案》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> <a href="https://slt.jiangxi.gov.cn/jxsslt/tzgg880/pc/content/content_1967432019809746944.html" target="_blank" rel="noopener">关于补充征集2026年水利科技项目指南建议的函（省水利厅）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>6.</strong> 《优质中小企业梯度培育管理办法》（工信部企业〔2026〕2号）
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>南昌市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://kjj.nc.gov.cn/nckjj/tztg/nav_list_2.shtml" target="_blank" rel="noopener">南昌市科技局通知通告（含科技计划项目申报通知）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 南昌市人民政府办公室《关于加快先进制造业项目建设推进数字化转型升级的若干措施》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://www.ncnews.com.cn/xwfb/xgdt/202604/t20260402_2212875.html" target="_blank" rel="noopener">南昌市2026年专精特新中小企业申报通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 固定板块 ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注江西省工信厅、省科技厅、省水利厅及南昌市科技创新局、市工信局的年度申报通知，提前做好材料准备。预计奖补金额可能因政策调整而变化，部分项目奖补金额需根据实际投资额计算。
+            </p>
+            <!-- 固定板块：项目申报全生命周期 -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 固定板块：项目咨询联系人 -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ 折叠面板区域 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述 -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>江西修江水利集团有限公司成立于2004年7月，是江西省内领先的水利水电工程综合服务企业。公司运营总部坐落于南昌市青云谱区井冈山大道明珠广场B座24楼，办公面积逾2000平方米。公司秉承"传承、创新、高效、和谐"的企业精神，以"精英职工、精品工程、精彩水院"为愿景目标，深耕水利行业二十余年，业务覆盖工程咨询、勘察测绘、设计施工及建设监理全产业链。公司已获评国家高新技术企业（2025年）、科技型中小企业（2025年），并连续多年被评为A级纳税人，在水利建设市场信用评级中获A级评定。近五年累计中标177个项目，中标总金额约11.64亿元，业务辐射江西全省及福建、四川等省外市场。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">江西修江水利集团有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">成立年份</div>
+                        <div class="value">2004年7月</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">章文兵</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册资本</div>
+                        <div class="value">5000万元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地址</div>
+                        <div class="value">南昌市青云谱区</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">员工规模</div>
+                        <div class="value">150-500人</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">企业性质</div>
+                        <div class="value">民营企业</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所属行业</div>
+                        <div class="value">水利、环境和公共设施管理业</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务 -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>公司以水利水电工程为核心，构建了涵盖咨询、勘察、测绘、设计、施工、监理的全产业链服务体系。拥有工程咨询行业甲级、工程测绘乙级、工程勘察乙级、水利行业设计乙级、水利工程施工总承包贰级等多项专业资质，具备从项目前期咨询到工程建设全过程服务能力。公司拥有注册建造师28人（其中一级建造师5人），专业技术团队实力雄厚。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#128221;</div>
+                        <h4>工程咨询（甲级）</h4>
+                        <p>水利工程可行性研究、项目建议书编制、投资估算与经济评价，为水利项目前期决策提供专业咨询服务。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#128270;</div>
+                        <h4>工程勘察与测绘（乙级）</h4>
+                        <p>水利工程地质勘察、地形测绘、水文地质调查，为工程设计和施工提供精准的地质与地理信息数据支撑。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#128736;</div>
+                        <h4>水利工程设计（乙级）</h4>
+                        <p>水库、堤防、灌区、水电站等水利工程规划设计，运用BIM等数字化技术提升设计质量和效率。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8e8;">&#127959;</div>
+                        <h4>水利工程施工（贰级）</h4>
+                        <p>水利工程施工总承包，涵盖堤防加固、水库除险加固、灌区改造、河道治理等水利基础设施建设。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fff3e0;">&#128269;</div>
+                        <h4>水利工程建设监理</h4>
+                        <p>水利工程施工全过程监理服务，确保工程质量、安全和进度符合规范要求。</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e3f2fd;">&#127758;</div>
+                        <h4>国土空间规划编制</h4>
+                        <p>水利相关国土空间规划、水资源综合利用规划编制，服务区域水利发展战略布局。</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉 -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 国家高新技术企业（2025年认定）</span>
+                        <span class="badge badge-national">&#127942; 科技型中小企业（2025年评价入库）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; A级纳税人（2024年度）</span>
+                        <span class="badge badge-province">&#127941; 全国水利建设市场信用评级A级（2024年）</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>专业资质</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-other">&#128203; 工程咨询行业甲级</span>
+                        <span class="badge badge-other">&#128203; 工程测绘乙级</span>
+                        <span class="badge badge-other">&#128203; 工程勘察乙级</span>
+                        <span class="badge badge-other">&#128203; 水利行业设计乙级</span>
+                        <span class="badge badge-other">&#128203; 水利工程施工总承包贰级</span>
+                        <span class="badge badge-other">&#128203; 水利工程建设监理</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请 -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目申请情况（2024-2026）</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">以下为基于公开信息整理的企业近三年获得的认定和项目情况，仅供参考。</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>国家高新技术企业认定</h4>
+                        <p>通过国家高新技术企业认定，享受企业所得税15%优惠及研发费用100%加计扣除政策。 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>科技型中小企业评价入库</h4>
+                        <p>成功入库科技型中小企业名单，享受研发费用加计扣除等税收优惠政策。 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>A级纳税人评定</h4>
+                        <p>连续获评纳税信用A级企业，体现良好的税务合规管理水平。 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>全国水利建设市场信用评级A级</h4>
+                        <p>在全国水利建设市场信用信息平台获得勘察类A级信用评级。 <span class="status-done">已通过</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024-2025年</div>
+                        <h4>水利工程项目中标</h4>
+                        <p>近五年累计中标水利工程项目177个，中标总金额约11.64亿元，覆盖堤防加固、灌区改造、河道治理等领域。 <span class="status-done">持续进行中</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    江西修江水利集团有限公司 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年6月25日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格层级筛选
+    function filterTable(level) {
+        const rows = document.querySelectorAll('#projectTable tbody tr');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        rows.forEach(row => {
+            if (level === 'all' || row.dataset.level === level) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. 滚动监听 (Scroll Spy)
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
